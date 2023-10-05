@@ -5,7 +5,7 @@ import { RootReducer } from '../../store'
 import { setTermo } from '../../store/reducers/filtro'
 
 import * as S from './styles'
-import * as enums from '../../utils/enums/Tarefa'
+import * as enums from '../../utils/enums/Contato'
 import { Botao, Campo } from '../../styles'
 
 type Props = {
@@ -24,41 +24,43 @@ const BarraLateral = ({ mostrarFiltros }: Props) => {
           <>
             <Campo
               type="text"
-              placeholder="Buscar"
+              placeholder="Buscar contatos"
               value={termo}
               onChange={(evento) => dispatch(setTermo(evento.target.value))}
             />
             <S.Filtros>
               <FiltroCard
-                valor={enums.Status.PENDENTE}
+                valor={enums.Status.NORMAL}
                 criterio="status"
-                legenda="prendentes"
+                legenda="Normal"
               />
               <FiltroCard
-                valor={enums.Status.CONCLUIDA}
+                valor={enums.Status.FAVORITOS}
                 criterio="status"
-                legenda="concluídas"
+                legenda="Favoritos"
               />
               <FiltroCard
-                valor={enums.Prioridade.URGENTE}
+                valor={enums.Prioridade.TRABALHO}
                 criterio="prioridade"
-                legenda="urgentes"
+                legenda="Trabalho"
               />
               <FiltroCard
-                valor={enums.Prioridade.IMPORTANTE}
+                valor={enums.Prioridade.FAMILIA}
                 criterio="prioridade"
-                legenda="importantes"
+                legenda="Família"
               />
               <FiltroCard
-                valor={enums.Prioridade.NORMAL}
+                valor={enums.Prioridade.PESSOAL}
                 criterio="prioridade"
-                legenda="normal"
+                legenda="Pessoal"
               />
-              <FiltroCard criterio="todas" legenda="todas" />
+              <FiltroCard criterio="todos" legenda="Total" />
             </S.Filtros>
           </>
         ) : (
-          <Botao onClick={() => navigate('/')}>Voltar a lista de tarefas</Botao>
+          <Botao onClick={() => navigate('/')}>
+            Voltar a lista de contatos
+          </Botao>
         )}
       </div>
     </S.Aside>

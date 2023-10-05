@@ -1,11 +1,11 @@
 import BotaoAdicionar from '../../components/BotaoAdicionar'
 import BarraLateral from '../../containers/BarrasLateral'
-import ListaDeTarefas from '../../containers/ListaDeTarefa'
+import ListaDeConstatos from '../../containers/ListaDeContato'
 
 const Home = () => (
   <>
     <BarraLateral mostrarFiltros />
-    <ListaDeTarefas />
+    <ListaDeConstatos />
     <BotaoAdicionar />
   </>
 )

@@ -1,27 +1,27 @@
 import styled from 'styled-components'
 
 export const Form = styled.form`
-  max-width: 547px;
   width: 100%;
   font-weight: bold;
   font-size: 14px;
   color: #666;
+  text-align: center;
 
   textarea {
     resize: none;
-    margin: 16px 0;
   }
 `
 
 export const Opcoes = styled.div`
-  margin-bottom: 16px;
+  margin: 16px 0;
+  text-align: center;
 
   p {
-    margin-bottom: 6px;
+    margin: 8px 0;
   }
 
   label {
-    margin-right: 6px;
+    margin-right: 16px;
   }
 `
 

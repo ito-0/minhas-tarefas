@@ -8,7 +8,8 @@ const EstiloGlobal = createGlobalStyle`
     box-sizing: border-box;
     font-family: roboto,sans-serif;
     list-style: none;
-  }`
+  }
+`
 
 export const Container = styled.div`
   display: grid;
@@ -26,6 +27,15 @@ export const Titulo = styled.h2`
   display: block;
   margin-top: 40px;
   margin-bottom: 40px;
+  font-size: 22px;
+  text-align: center;
+`
+
+export const Info = styled.h3`
+  font-weight: bold;
+  display: block;
+  margin-top: 40px;
+  margin-bottom: 40px;
   font-size: 18px;
 `
 
@@ -37,6 +47,8 @@ export const Campo = styled.input`
   color: #666;
   border-color: #666;
   width: 100%;
+  margin: 8px 0;
+  align-items: center;
 `
 
 export const Botao = styled.button`

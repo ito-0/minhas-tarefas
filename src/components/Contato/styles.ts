@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import variaveis from '../../styles/variaveis'
 
-import * as enums from '../../utils/enums/Tarefa'
+import * as enums from '../../utils/enums/Contato'
 import { Botao } from '../../styles'
 
 type TagProps = {
@@ -12,12 +12,12 @@ type TagProps = {
 
 function retornaCorDeFundo(props: TagProps): string {
   if (props.parametro === 'prioridade') {
-    if (props.prioridade === enums.Prioridade.URGENTE) return variaveis.vermelho
-    if (props.prioridade === enums.Prioridade.IMPORTANTE)
-      return variaveis.laranja
+    if (props.prioridade === enums.Prioridade.TRABALHO)
+      return variaveis.vermelho
+    if (props.prioridade === enums.Prioridade.FAMILIA) return variaveis.azul
+    if (props.prioridade === enums.Prioridade.PESSOAL) return variaveis.amarelo
   } else {
-    if (props.status === enums.Status.PENDENTE) return variaveis.amarelo
-    if (props.status === enums.Status.CONCLUIDA) return variaveis.verde
+    if (props.status === enums.Status.FAVORITOS) return variaveis.verde
   }
   return '#ccc'
 }
@@ -36,15 +36,9 @@ export const Card = styled.div`
   }
 `
 
-export const Titulo = styled.h3`
-  font-weight: bold;
-  font-size: 18px;
-  margin-left: 8px;
-`
-
 export const Tag = styled.span<TagProps>`
-  padding: 4px 8px;
-  font-size: 10px;
+  padding: 6px 8px;
+  font-size: 12px;
   font-weight: bold;
   color: #fff;
   background-color: ${(props) => retornaCorDeFundo(props)};
@@ -53,18 +47,56 @@ export const Tag = styled.span<TagProps>`
   display: inline-block;
 `
 
-export const Descricao = styled.textarea`
+const SharedTextareaStyle = `
   color: #8b8b8b;
   font-size: 14px;
-  line-height: 24px;
+  line-height: 16px;
   font-family: Roboto Mono, monospace;
   display: block;
   width: 100%;
-  margin-bottom: 16px;
-  margin-top: 16px;
+  margin: 8px 0;
   resize: none;
   border: none;
   background-color: transparent;
+  border-radius: 4px;
+`
+
+export const Nome = styled.h3`
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0 8px;
+  width: 100%;
+
+  textarea {
+    resize: none;
+    border: none;
+    margin-top: 20px;
+    line-height: 14px;
+  }
+`
+
+export const Descricao = styled.textarea`
+  ${SharedTextareaStyle}
+`
+
+export const Email = styled.textarea`
+  ${SharedTextareaStyle}
+`
+
+export const Celular = styled.textarea`
+  ${SharedTextareaStyle}
+`
+
+export const EditModeContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  label {
+    margin: 4px 0;
+    &.hidden {
+      display: none;
+    }
+  }
 `
 
 export const BarraAcoes = styled.div`
